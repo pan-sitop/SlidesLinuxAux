@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase Linux - INF113</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <main class="slide-deck">
+        
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <section class="slide active">
+            <div class="slide-content center-content">
+                <div class="badge">INF-113: Programación Web I</div>
+                <h1 class="main-title">Dominando la Terminal <span class="highlight">Linux</span></h1>
+                <p class="subtitle">Fundamentos y Comandos Esenciales</p>
+                <div class="divider"></div>
+                <div class="presenter-info">
+                    <p><i class="fas fa-chalkboard-teacher"></i> Aux. Arturo  Espinoza</p>
+                    <p><i class="fas fa-university"></i> UMSA - Gestión 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>01. ¿Por qué usamos la Consola?</h2></div>
+            <div class="slide-content two-columns-spaced">
+                <div class="card visual-card">
+                    <div class="icon-circle"><i class="fas fa-mouse"></i></div>
+                    <h3>GUI (Gráfica)</h3>
+                    <ul class="clean-list">
+                        <li>Visual (Ventanas)</li>
+                        <li>Fácil de usar</li>
+                        <li class="danger-text"><i class="fas fa-times"></i> Lento en servidores</li>
+                    </ul>
+                </div>
+                <div class="card visual-card highlight-border">
+                    <div class="icon-circle active-icon"><i class="fas fa-terminal"></i></div>
+                    <h3>CLI (Consola)</h3>
+                    <ul class="clean-list">
+                        <li>Solo Texto</li>
+                        <li>Curva de aprendizaje</li>
+                        <li class="success-text"><i class="fas fa-check"></i> Rápido y Potente</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>02. Navegación (Moverse)</h2></div>
+            <div class="slide-content">
+                <div class="command-box">
+                    <div class="cmd-row">
+                        <code>pwd</code>
+                        <span>¿Dónde estoy parado? (Ruta).</span>
+                    </div>
+                    <div class="cmd-row">
+                        <code>cd Descargas</code>
+                        <span>Entrar a una carpeta.</span>
+                    </div>
+                    <div class="cmd-row">
+                        <code>cd ..</code>
+                        <span>Salir a la carpeta anterior (Atrás).</span>
+                    </div>
+                    <div class="cmd-row highlight-row">
+                        <code>cd ~</code>
+                        <span>Ir a mi carpeta personal (HOME).</span>
+                    </div>
+                </div>
+
+                <div class="keyboard-tip">
+                    <i class="fas fa-keyboard"></i> <strong>¿No te sale el símbolo <code>~</code>?</strong>
+                    <p>Intenta con estos atajos:</p>
+                    <div class="keys">
+                        <span>AltGr</span> + <span>4</span> &nbsp;o&nbsp; <span>Alt</span> + <span>1</span><span>2</span><span>6</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>03. Listar Archivos</h2></div>
+            <div class="slide-content">
+                <div class="grid-2x2">
+                    <div class="mini-card">
+                        <code>ls</code>
+                        <p>Listado simple (solo nombres).</p>
+                    </div>
+                    <div class="mini-card highlight-card">
+                        <code>ls -la</code>
+                        <p><strong>Combo:</strong> Muestra TODO (ocultos) y DETALLES (permisos).</p>
+                    </div>
+                    <div class="mini-card">
+                        <code>dir</code>
+                        <p><strong>Para Windows:</strong> Funciona igual que <code>ls</code> en la mayoría de Linux.</p>
+                    </div>
+                    <div class="mini-card">
+                        <code>ls -t</code>
+                        <p><strong>Tiempo:</strong> Ordena por fecha de modificación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>04. Comodines (Selección Múltiple)</h2></div>
+            <div class="slide-content">
+                <p>Para seleccionar muchos archivos a la vez.</p>
+                <div class="command-box large-text">
+                    <div class="cmd-row">
+                        <code class="symbol">*</code>
+                        <span><strong>El Asterisco:</strong> Significa "CUALQUIER COSA".<br>
+                        <code>ls *.jpg</code> (Muestra todos los archivos JPG).</span>
+                    </div>
+                    <div class="cmd-row">
+                        <code class="symbol">?</code>
+                        <span><strong>Interrogación:</strong> Significa "UN CARACTER".<br>
+                        <code>ls foto?.png</code> (Busca foto1, fotoA, fotoX).</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>05. Crear Directorios (Carpetas)</h2></div>
+            <div class="slide-content">
+                <div class="grid-2x2">
+                    <div class="mini-card">
+                        <code>mkdir carpeta</code>
+                        <p>Crea una carpeta nueva vacía.</p>
+                    </div>
+                    <div class="mini-card highlight-card">
+                        <code>mkdir -p a/b/c</code>
+                        <p><strong>Cascada:</strong> Crea una carpeta dentro de otra automáticamente.</p>
+                    </div>
+                    <div class="mini-card">
+                        <code>mkdir "Mi Carpeta"</code>
+                        <p>Usa comillas si el nombre tiene espacios.</p>
+                    </div>
+                    <div class="mini-card">
+                        <code>tree</code>
+                        <p>Muestra tus carpetas en forma de árbol (si está instalado).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>06. El Arte de Borrar (¡Cuidado!)</h2></div>
+            <div class="slide-content">
+                <div class="warning-box" style="margin-bottom: 20px; font-size: 1.4rem; padding: 10px; border: 2px solid #e74c3c; background: #fff5f5; border-radius: 8px; text-align: center; color: #c0392b;">
+                    <i class="fas fa-exclamation-triangle"></i> En Linux NO existe la Papelera de Reciclaje.
+                </div>
+                <div class="command-box">
+                    <div class="cmd-row">
+                        <code>rm archivo.txt</code>
+                        <span>Borra un <strong>archivo</strong> (File).</span>
+                    </div>
+                    <div class="cmd-row">
+                        <code>rmdir carpeta</code>
+                        <span>Borra carpeta <strong>SOLO si está vacía</strong>.</span>
+                    </div>
+                    <div class="cmd-row highlight-row">
+                        <code>rm -r carpeta</code>
+                        <span><strong>Recursivo:</strong> Borra la carpeta y TODO lo que tiene adentro.</span>
+                    </div>
+                    <div class="cmd-row">
+                        <code>rm -i archivo</code>
+                        <span><strong>Interactivo:</strong> Te pregunta "¿Seguro?" antes de borrar.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>07. Copiar (cp) y Mover (mv)</h2></div>
+            <div class="slide-content">
+                <div class="command-box">
+                    <div class="cmd-row">
+                        <code>cp archivo destino</code>
+                        <span>Copia un archivo.</span>
+                    </div>
+                    <div class="cmd-row">
+                        <code>cp -r carpeta1 carpeta2</code>
+                        <span><strong>Recursivo:</strong> Obligatorio para copiar carpetas completas.</span>
+                    </div>
+                    <div class="cmd-row">
+                        <code>mv archivo destino</code>
+                        <span>Mueve un archivo de lugar.</span>
+                    </div>
+                    <div class="cmd-row highlight-row">
+                        <code>mv viejo.txt nuevo.txt</code>
+                        <span><strong>Renombrar:</strong> Linux no tiene comando "rename", usamos <code>mv</code>.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>08. Leer y Unir (cat)</h2></div>
+            <div class="slide-content">
+                <div class="grid-2x2">
+                    <div class="mini-card">
+                        <code>cat archivo</code>
+                        <p>Muestra todo el contenido rápido.</p>
+                    </div>
+                    <div class="mini-card">
+                        <code>less archivo</code>
+                        <p>Permite navegar (arriba/abajo). Salir con 'Q'.</p>
+                    </div>
+                    <div class="mini-card">
+                        <code>head -n 5</code>
+                        <p>Primeras 5 líneas.</p>
+                    </div>
+                    <div class="mini-card">
+                        <code>tail -n 5</code>
+                        <p>Últimas 5 líneas (Logs).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>09. ¿Cómo creo un archivo?</h2></div>
+            <div class="slide-content">
+                <div class="method-box">
+                    <h3>1. Archivo Vacío</h3>
+                    <code>touch notas.txt</code>
+                </div>
+                <div class="method-box">
+                    <h3>2. Archivo con texto rápido</h3>
+                    <code>echo "Hola mundo" > saludo.txt</code>
+                </div>
+                <div class="method-box highlight-method">
+                    <h3>3. Escribir en vivo</h3>
+                    <code>cat > lista.txt</code>
+                    <p>Escribes tus líneas... y al final presionas:</p>
+                    <div class="keys"><span>CTRL</span> + <span>D</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>10. Buscar (Find y Grep)</h2></div>
+            <div class="slide-content two-columns-spaced">
+                <div class="card">
+                    <h3><i class="fas fa-search"></i> find</h3>
+                    <p>Busca <strong>ARCHIVOS</strong>.</p>
+                    <div class="command-box">
+                        <code>find . -name "*.pdf"</code>
+                        <small>Busca todos los PDFs aquí.</small>
+                    </div>
+                </div>
+                <div class="card highlight-card">
+                    <h3><i class="fas fa-filter"></i> grep</h3>
+                    <p>Busca <strong>TEXTO</strong> dentro.</p>
+                    <div class="command-box">
+                        <code>grep "root" /etc/passwd</code>
+                        <small>Busca la palabra "root".</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>11. Permisos (Modo Letras)</h2></div>
+            <div class="slide-content">
+                <p>Fórmula: <code>[Quién] [Signo] [Permiso]</code></p>
+                <div class="permissions-visual">
+                    <div class="perm-block bg-dark">
+                        <strong>u</strong> (Usuario)<br><strong>g</strong> (Grupo)<br><strong>o</strong> (Otros)
+                    </div>
+                    <div class="perm-plus large-symbol">+ / -</div>
+                    <div class="perm-block bg-dark">
+                        <strong>r</strong> (Leer)<br><strong>w</strong> (Escribir)<br><strong>x</strong> (Ejecutar)
+                    </div>
+                </div>
+                <div class="example-box big-text">
+                    <code>chmod u+x script.sh</code>
+                    <p>Significa: "Al <strong>U</strong>suario, <strong>+</strong>sumarle, e<strong>X</strong>ecución".</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>12. Permisos (Modo Números)</h2></div>
+            <div class="slide-content">
+                <div class="math-box">
+                    <div class="math-row"><span class="m-label read">Lectura (r)</span><span class="m-val">= 4</span></div>
+                    <div class="math-row"><span class="m-label write">Escritura (w)</span><span class="m-val">= 2</span></div>
+                    <div class="math-row"><span class="m-label exec">Ejecución (x)</span><span class="m-val">= 1</span></div>
+                </div>
+                <div class="command-box center-text large-code">
+                    <code>chmod 755 archivo</code>
+                    <p style="font-size: 1.5rem; margin-top:10px;">Dueño (7) | Grupo (5) | Otros (5)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>13. Tuberías (Pipes <code>|</code>)</h2></div>
+            <div class="slide-content">
+                <p>Pasar la información de un comando a otro.</p>
+                <div class="command-box center-text">
+                    <code>cat lista.txt | sort</code>
+                    <p>Lee la lista -> La ordena alfabéticamente.</p>
+                </div>
+                <div class="command-box center-text" style="margin-top:20px;">
+                    <code>ls -la | less</code>
+                    <p>Lista directorio -> Permite hacer scroll.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>14. Scripting Básico</h2></div>
+            <div class="slide-content two-columns">
+                <div class="text-col">
+                    <ol class="big-list">
+                        <li>Crear archivo <code>.sh</code></li>
+                        <li>Cabecera: <code>#!/bin/bash</code></li>
+                        <li>Permisos: <code>chmod +x</code></li>
+                        <li>Ejecutar: <code>./script.sh</code></li>
+                    </ol>
+                </div>
+                <div class="code-col">
+<pre class="editor">
+<span class="comment">#!/bin/bash</span>
+<span class="keyword">echo</span> <span class="string">"Hola, ¿tu nombre?"</span>
+<span class="cmd">read</span> nombre
+<span class="keyword">echo</span> <span class="string">"Creando carpeta..."</span>
+<span class="cmd">mkdir</span> <span class="string">"$nombre"</span>
+<span class="keyword">echo</span> <span class="string">"¡Listo!"</span>
+</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2><i class="fas fa-flag-checkered"></i> Reto de Clase</h2></div>
+            <div class="slide-content center-content">
+                <div class="task-card">
+                    <p>1. Crear carpeta <code>examen</code></p>
+                    <p>2. Crear archivo <code>datos.txt</code> dentro.</p>
+                    <p>3. Escribir tu nombre en el archivo.</p>
+                    <p>4. Quitar permiso de escritura al Grupo (<code>g-w</code>).</p>
+                </div>
+                <div class="timer-placeholder">¡A practicar!</div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="controls">
+        <button onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+        <span id="slideIndicator">1 / 16</span>
+        <button onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
