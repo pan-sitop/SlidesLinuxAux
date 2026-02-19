@@ -8,7 +8,12 @@ function showSlide(index) {
     if (index < 0) index = 0;
     if (index >= totalSlides) index = totalSlides - 1;
 
-    slides.forEach(slide => slide.classList.remove('active'));
+    slides.forEach(slide => {
+        slide.classList.remove('active');
+        // Resetear el scroll de la diapositiva al cambiar
+        slide.scrollTop = 0; 
+    });
+    
     slides[index].classList.add('active');
     currentSlide = index;
 
