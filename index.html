@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase Linux - INF113</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <main class="slide-deck">
+        <div class="progress-bar-container"><div class="progress-bar" id="progressBar"></div></div>
+
+        <section class="slide active">
+            <div class="slide-content center-content">
+                <div class="badge">INF-113: Programación Web I</div>
+                <h1 class="main-title">Dominando la Terminal <span class="highlight">Linux</span></h1>
+                <p class="subtitle">Comandos Básicos, Avanzados y Tuberías</p>
+                <div class="divider"></div>
+                <div class="presenter-info">
+                    <p><i class="fas fa-chalkboard-teacher"></i> Aux. Arturo Espinoza</p>
+                    <p><i class="fas fa-university"></i> UMSA - Gestión 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>01. ¿Por qué usamos la Consola?</h2></div>
+            <div class="slide-content two-columns-spaced">
+                <div class="card visual-card">
+                    <div class="icon-circle"><i class="fas fa-mouse"></i></div>
+                    <h3>GUI (Gráfica)</h3>
+                    <ul class="clean-list">
+                        <li>Visual (Ventanas)</li>
+                        <li class="danger-text"><i class="fas fa-times"></i> Lento en servidores</li>
+                    </ul>
+                </div>
+                <div class="card visual-card highlight-border">
+                    <div class="icon-circle active-icon"><i class="fas fa-terminal"></i></div>
+                    <h3>CLI (Consola)</h3>
+                    <ul class="clean-list">
+                        <li>Solo Texto</li>
+                        <li class="success-text"><i class="fas fa-check"></i> Rápido y Potente</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>02. Ayuda y Manuales</h2></div>
+            <div class="slide-content">
+                <p>Nadie memoriza todos los comandos. Así pedimos ayuda:</p>
+                <div class="command-box">
+                    <div class="cmd-row">
+                        <code>man ls</code>
+                        <span><strong>Manual:</strong> Muestra el manual completo de un comando. (<strong>Q</strong> para salir).</span>
+                    </div>
+                    <div class="cmd-row">
+                        <code>help cd</code>
+                        <span><strong>Ayuda rápida:</strong> Información breve de comandos internos.</span>
+                    </div>
+                    <div class="cmd-row">
+                        <code>clear</code>
+                        <span>Limpia la pantalla para trabajar más cómodos.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>03. Navegación (pwd, cd)</h2></div>
+            <div class="slide-content">
+                <div class="command-box">
+                    <div class="cmd-row"><code>pwd</code><span>Print Working Directory. Ruta actual.</span></div>
+                    <div class="cmd-row"><code>cd Descargas</code><span>Entrar a una carpeta.</span></div>
+                    <div class="cmd-row"><code>cd ..</code><span>Salir a la carpeta anterior.</span></div>
+                    <div class="cmd-row highlight-row"><code>cd ~</code><span>Ir a mi carpeta personal (HOME).</span></div>
+                </div>
+                <div class="keyboard-tip">
+                    <i class="fas fa-keyboard"></i> <strong>Símbolo <code>~</code> (Virgulilla):</strong> AltGr + 4 &nbsp;o&nbsp; Alt + 126
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>04. Listar Archivos (ls)</h2></div>
+            <div class="slide-content">
+                <div class="grid-2x2">
+                    <div class="mini-card"><code>ls</code><p>Listado simple.</p></div>
+                    <div class="mini-card highlight-card"><code>ls -la</code><p><strong>Todo y Largo:</strong> Detalles y archivos ocultos.</p></div>
+                    <div class="mini-card"><code>dir</code><p>Alternativa que viene de Windows.</p></div>
+                    <div class="mini-card"><code>ls -t</code><p>Ordena por fecha (más recientes primero).</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>05. Crear y Borrar (Peligro)</h2></div>
+            <div class="slide-content">
+                <div class="command-box">
+                    <div class="cmd-row"><code>mkdir carpeta</code><span>Crea un directorio nuevo.</span></div>
+                    <div class="cmd-row"><code>rm archivo.txt</code><span>Borra un archivo (File).</span></div>
+                    <div class="cmd-row"><code>rmdir carpeta</code><span>Borra carpeta <strong>SOLO si está vacía</strong>.</span></div>
+                    <div class="cmd-row danger-row"><code>rm -r carpeta</code><span><strong>Recursivo:</strong> Borra la carpeta y TODO su contenido.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>06. Copiar (cp) y Mover (mv)</h2></div>
+            <div class="slide-content">
+                <div class="command-box">
+                    <div class="cmd-row"><code>cp archivo destino</code><span>Copia un archivo.</span></div>
+                    <div class="cmd-row"><code>cp -r dir1 dir2</code><span>Copia una carpeta completa.</span></div>
+                    <div class="cmd-row"><code>mv archivo destino</code><span>Mueve un archivo.</span></div>
+                    <div class="cmd-row highlight-row"><code>mv viejo.txt nuevo.txt</code><span><strong>Renombrar:</strong> Así cambiamos nombres en Linux.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>07. Leer Archivos</h2></div>
+            <div class="slide-content">
+                <div class="grid-2x2">
+                    <div class="mini-card"><code>cat notas.txt</code><p>Muestra TODO el contenido de golpe.</p></div>
+                    <div class="mini-card"><code>less notas.txt</code><p>Visor para leer poco a poco (Q para salir).</p></div>
+                    <div class="mini-card"><code>head -n 5 log.txt</code><p>Lee solo las primeras 5 líneas.</p></div>
+                    <div class="mini-card"><code>tail -n 5 log.txt</code><p>Lee solo las últimas 5 líneas.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>08. ¿Cómo creo un archivo?</h2></div>
+            <div class="slide-content">
+                <div class="method-box">
+                    <h3>1. Archivo Vacío</h3>
+                    <code>touch notas.txt</code>
+                </div>
+                <div class="method-box">
+                    <h3>2. Archivo con texto rápido</h3>
+                    <code>echo "Hola mundo" > saludo.txt</code>
+                </div>
+                <div class="method-box highlight-method">
+                    <h3>3. Escribir en vivo</h3>
+                    <code>cat > lista.txt</code>
+                    <p style="margin-top: 5px;">Escribes tus líneas en la consola... y para guardar y salir presionas:</p>
+                    <div class="keys" style="margin-top: 5px;"><span>CTRL</span> + <span>D</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>09. Buscar Archivos (find)</h2></div>
+            <div class="slide-content">
+                <p>Busca archivos y directorios en el sistema.</p>
+                <div class="command-box">
+                    <div class="cmd-row">
+                        <code>find . -name "tarea.txt"</code>
+                        <span>Busca el archivo exactamente con ese nombre.</span>
+                    </div>
+                    <div class="cmd-row">
+                        <code>find . -iname "TaRea.txt"</code>
+                        <span><strong>Ignora Mayúsculas:</strong> Lo encuentra sin importar cómo esté escrito.</span>
+                    </div>
+                    <div class="cmd-row">
+                        <code>find . -name "*.pdf"</code>
+                        <span>Usa <strong>comodín</strong>: Busca todos los archivos que terminen en .pdf</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>10. Buscar Texto (grep)</h2></div>
+            <div class="slide-content">
+                <p>Busca palabras DENTRO de los archivos.</p>
+                <div class="command-box">
+                    <div class="cmd-row"><code>grep "error" log.txt</code><span>Muestra líneas con la palabra "error".</span></div>
+                    <div class="cmd-row"><code>grep -i "Admin" log.txt</code><span><strong>Ignore:</strong> No distingue mayúsculas.</span></div>
+                    <div class="cmd-row"><code>grep -c "root" log.txt</code><span><strong>Count:</strong> Muestra CUÁNTAS VECES aparece.</span></div>
+                    <div class="cmd-row highlight-row"><code>grep -v "root" log.txt</code><span><strong>Invert:</strong> Muestra todo lo que NO tenga la palabra root.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>11. Filtros (wc, sort)</h2></div>
+            <div class="slide-content">
+                <div class="grid-2x2">
+                    <div class="mini-card">
+                        <h3>Contador (wc)</h3>
+                        <code>wc -l archivo.txt</code>
+                        <p>Cuenta cuántas <strong>líneas</strong> (-l) tiene el archivo.</p>
+                    </div>
+                    <div class="mini-card">
+                        <h3>Ordenamiento (sort)</h3>
+                        <code>sort archivo.txt</code>
+                        <p>Ordena el contenido alfabéticamente.</p>
+                    </div>
+                    <div class="mini-card highlight-card">
+                        <code>wc -w archivo.txt</code>
+                        <p>Cuenta <strong>palabras</strong> (-w).</p>
+                    </div>
+                    <div class="mini-card highlight-card">
+                        <code>sort -r archivo.txt</code>
+                        <p>Ordena de forma inversa (Z-A).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>12. Procesos (top, ps, kill)</h2></div>
+            <div class="slide-content">
+                <p>Un "proceso" es un programa ejecutándose.</p>
+                <div class="command-box">
+                    <div class="cmd-row">
+                        <code>top</code>
+                        <span>Monitor en tiempo real. (Presiona <strong>Q</strong> para salir).</span>
+                    </div>
+                    <div class="cmd-row">
+                        <code>ps -aux</code>
+                        <span>Muestra todos los procesos actuales y su número PID (ID).</span>
+                    </div>
+                    <div class="cmd-row danger-row">
+                        <code>kill 1234</code>
+                        <span>Cierra a la fuerza un programa colgado usando su PID (ej: 1234).</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>13. Permisos (Modo Letras)</h2></div>
+            <div class="slide-content">
+                <p>Fórmula: <code>[Quién] [Signo] [Permiso]</code></p>
+                <div class="permissions-visual">
+                    <div class="perm-block bg-dark"><strong>u</strong> (Usuario)<br><strong>g</strong> (Grupo)<br><strong>o</strong> (Otros)</div>
+                    <div class="perm-plus large-symbol">+ / -</div>
+                    <div class="perm-block bg-dark"><strong>r</strong> (Leer)<br><strong>w</strong> (Escribir)<br><strong>x</strong> (Ejecutar)</div>
+                </div>
+                <div class="example-box big-text">
+                    <code>chmod u+x script.sh</code>
+                    <p>Significa: "Al <strong>U</strong>suario, <strong>+</strong>sumarle, e<strong>X</strong>ecución".</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>14. Permisos (Modo Números)</h2></div>
+            <div class="slide-content">
+                <div class="math-box">
+                    <div class="math-row"><span class="m-label read">Lectura (r)</span><span class="m-val">= 4</span></div>
+                    <div class="math-row"><span class="m-label write">Escritura (w)</span><span class="m-val">= 2</span></div>
+                    <div class="math-row"><span class="m-label exec">Ejecución (x)</span><span class="m-val">= 1</span></div>
+                </div>
+                <div class="command-box center-text large-code">
+                    <code>chmod 755 archivo</code>
+                    <p style="margin-top:10px;">Dueño (4+2+1=7) | Grupo (4+1=5) | Otros (4+1=5)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>15. Cambiar el Dueño (chown)</h2></div>
+            <div class="slide-content">
+                <p>Transfiere la propiedad de un archivo o carpeta a otro usuario.</p>
+                <div class="command-box">
+                    <div class="cmd-row">
+                        <code>chown nuevo archivo.txt</code>
+                        <span>Pasa la propiedad al usuario "nuevo".</span>
+                    </div>
+                    <div class="cmd-row highlight-row">
+                        <code>chown -R root:admin /dir</code>
+                        <span><strong>Recursivo:</strong> Le da la carpeta y su contenido al usuario 'root' y al grupo 'admin'.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>16. Los 3 Flujos (Concepto)</h2></div>
+            <div class="slide-content">
+                <p>En Linux "todo es un archivo", incluso los canales de comunicación:</p>
+                <div class="grid-2x2">
+                    <div class="mini-card">
+                        <h3>Standard Input</h3>
+                        <code>stdin (0)</code>
+                        <p>La entrada de datos (tu <strong>teclado</strong>).</p>
+                    </div>
+                    <div class="mini-card">
+                        <h3>Standard Output</h3>
+                        <code>stdout (1)</code>
+                        <p>La salida exitosa (tu <strong>pantalla</strong>).</p>
+                    </div>
+                    <div class="mini-card danger-border" style="grid-column: span 2;">
+                        <h3>Standard Error</h3>
+                        <code>stderr (2)</code>
+                        <p>Por donde salen los mensajes de <strong>error</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>17. Redirecciones (>, >>, 2>)</h2></div>
+            <div class="slide-content">
+                <p>Desviar la salida de la pantalla hacia un archivo.</p>
+                <div class="command-box">
+                    <div class="cmd-row">
+                        <code>echo "Hola" > saludo.txt</code>
+                        <span><strong>Sobrescribir (>):</strong> Crea o sobrescribe el archivo.</span>
+                    </div>
+                    <div class="cmd-row highlight-row">
+                        <code>echo "Mundo" >> saludo.txt</code>
+                        <span><strong>Añadir (>>):</strong> Agrega texto al final sin borrar nada.</span>
+                    </div>
+                    <div class="cmd-row danger-row">
+                        <code>ls /falsa 2> error.log</code>
+                        <span><strong>Error (2>):</strong> Guarda el mensaje de error en un archivo.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2>18. Tuberías (Pipes <code>|</code>)</h2></div>
+            <div class="slide-content">
+                <p>El pipe (<code>|</code>) toma el resultado de un comando y lo usa como entrada del siguiente.</p>
+                <div class="command-box center-text">
+                    <code>ls -la | grep "Feb" | wc -l</code>
+                </div>
+                <div class="pipeline-visual">
+                    <div class="pipe-step"><strong>1. ls</strong><br><small>Lista archivos</small></div>
+                    <div class="pipe-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="pipe-step"><strong>2. grep</strong><br><small>Filtra "Febrero"</small></div>
+                    <div class="pipe-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="pipe-step"><strong>3. wc</strong><br><small>Cuenta líneas</small></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide-header"><h2><i class="fas fa-flag-checkered"></i> Fin de la Presentación</h2></div>
+            <div class="slide-content center-content">
+                <div class="task-card">
+                    <p><i class="fas fa-check-circle success-text"></i> Comandos Básicos</p>
+                    <p><i class="fas fa-check-circle success-text"></i> Filtros, Permisos y Procesos</p>
+                    <p><i class="fas fa-check-circle success-text"></i> Redirecciones y Tuberías</p>
+                    <hr style="margin: 15px 0;">
+                    <p style="font-size: 1.4rem; text-align: center;">¡Gracias por su atención! Nos vemos en clases.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="controls">
+        <button onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+        <span id="slideIndicator">1 / 20</span>
+        <button onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
