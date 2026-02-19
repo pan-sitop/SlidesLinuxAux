@@ -19,7 +19,7 @@
                 <p class="subtitle">Comandos Básicos, Avanzados y Tuberías</p>
                 <div class="divider"></div>
                 <div class="presenter-info">
-                    <p><i class="fas fa-chalkboard-teacher"></i> Aux. Arturo Saúl Espinoza Carita</p>
+                    <p><i class="fas fa-chalkboard-teacher"></i> Aux. Arturo Espinoza</p>
                     <p><i class="fas fa-university"></i> UMSA - Gestión 2026</p>
                 </div>
             </div>
@@ -142,7 +142,7 @@
                     <h3>El Editor de Texto (nano):</h3>
                     <code>nano archivo.txt</code>
                     <p style="margin-top: 10px;">Abre un editor en la consola. Atajos vitales:</p>
-                    <ul class="clean-list" style="font-size: 1.4rem;">
+                    <ul class="clean-list">
                         <li>💾 <strong>Guardar:</strong> <code>CTRL + O</code> y luego <code>ENTER</code></li>
                         <li>🚪 <strong>Salir:</strong> <code>CTRL + X</code></li>
                     </ul>
@@ -257,7 +257,7 @@
                 </div>
                 <div class="command-box center-text large-code">
                     <code>chmod 755 archivo</code>
-                    <p style="font-size: 1.5rem; margin-top:10px;">Dueño (4+2+1=7) | Grupo (4+1=5) | Otros (4+1=5)</p>
+                    <p style="margin-top:10px;">Dueño (4+2+1=7) | Grupo (4+1=5) | Otros (4+1=5)</p>
                 </div>
             </div>
         </section>
@@ -287,17 +287,17 @@
                     <div class="mini-card">
                         <h3>Standard Input</h3>
                         <code>stdin (0)</code>
-                        <p>La entrada de datos (usualmente tu <strong>teclado</strong>).</p>
+                        <p>La entrada de datos (tu <strong>teclado</strong>).</p>
                     </div>
                     <div class="mini-card">
                         <h3>Standard Output</h3>
                         <code>stdout (1)</code>
-                        <p>La salida exitosa (usualmente tu <strong>pantalla</strong>).</p>
+                        <p>La salida exitosa (tu <strong>pantalla</strong>).</p>
                     </div>
                     <div class="mini-card danger-border" style="grid-column: span 2;">
                         <h3>Standard Error</h3>
                         <code>stderr (2)</code>
-                        <p>Por donde salen los mensajes de <strong>error</strong> cuando algo falla.</p>
+                        <p>Por donde salen los mensajes de <strong>error</strong>.</p>
                     </div>
                 </div>
             </div>
@@ -306,19 +306,19 @@
         <section class="slide">
             <div class="slide-header"><h2>17. Redirecciones (>, >>, 2>)</h2></div>
             <div class="slide-content">
-                <p>Podemos desviar la salida (stdout) de la pantalla hacia un archivo.</p>
+                <p>Podemos desviar la salida de la pantalla hacia un archivo.</p>
                 <div class="command-box">
                     <div class="cmd-row">
                         <code>echo "Hola" > saludo.txt</code>
-                        <span><strong>Sobrescribir (>):</strong> Crea el archivo. Si ya existe, borra lo anterior y escribe "Hola".</span>
+                        <span><strong>Sobrescribir (>):</strong> Escribe "Hola". Si ya existe, borra lo anterior.</span>
                     </div>
                     <div class="cmd-row highlight-row">
                         <code>echo "Mundo" >> saludo.txt</code>
-                        <span><strong>Añadir (>>):</strong> Agrega "Mundo" al final del archivo sin borrar lo anterior.</span>
+                        <span><strong>Añadir (>>):</strong> Agrega "Mundo" al final sin borrar nada.</span>
                     </div>
                     <div class="cmd-row danger-row">
-                        <code>ls /carpeta_falsa 2> errores.log</code>
-                        <span><strong>Error (2>):</strong> Como la carpeta no existe, guarda el mensaje de error en el archivo log.</span>
+                        <code>ls /falsa 2> errores.log</code>
+                        <span><strong>Error (2>):</strong> Guarda el mensaje de error en un archivo.</span>
                     </div>
                 </div>
             </div>
@@ -327,7 +327,7 @@
         <section class="slide">
             <div class="slide-header"><h2>18. Tuberías (Pipes <code>|</code>)</h2></div>
             <div class="slide-content">
-                <p>El pipe (<code>|</code>) toma el resultado de un comando y lo usa como entrada del siguiente comando.</p>
+                <p>El pipe (<code>|</code>) toma el resultado de un comando y lo usa como entrada del siguiente.</p>
                 <div class="command-box center-text">
                     <code>ls -la | grep "Feb" | wc -l</code>
                 </div>
@@ -349,7 +349,7 @@
                     <p><i class="fas fa-check-circle success-text"></i> Comandos Avanzados (grep, chmod, ps)</p>
                     <p><i class="fas fa-check-circle success-text"></i> Redirecciones y Pipes (>, >>, |)</p>
                     <hr style="margin: 15px 0;">
-                    <p style="font-size: 1.6rem;">¡Ya tienen todo lo necesario para su Tarea 1 en LaTeX!</p>
+                    <p style="font-size: 1.4rem;">La práctica hace al maestro. ¡Nos vemos en el laboratorio!</p>
                 </div>
             </div>
         </section>
